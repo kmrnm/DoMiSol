@@ -1,12 +1,10 @@
 :root {
     --bg: #0b1220;
-    --card: rgba(255, 255, 255, 0.08);
-    --card2: rgba(255, 255, 255, 0.06);
-    --text: rgba(255, 255, 255, 0.92);
-    --muted: rgba(255, 255, 255, 0.68);
-    --line: rgba(255, 255, 255, 0.12);
-    --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-    --radius: 22px;
+    --text: rgba(20, 26, 38, 0.95);
+    --muted: rgba(20, 26, 38, 0.60);
+    --line: rgba(0, 0, 0, 0.12);
+    --shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
+    --radius: 26px;
 }
 
 * {
@@ -20,13 +18,9 @@ body {
 
 body {
     margin: 0;
+    font-family: ui-rounded, "SF Pro Rounded", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    background:
-        radial-gradient(900px 500px at 20% 15%, rgba(255, 255, 255, 0.10), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(255, 255, 255, 0.08), transparent 62%),
-        radial-gradient(1100px 700px at 50% 95%, rgba(255, 255, 255, 0.06), transparent 60%),
-        var(--bg);
+    overflow-x: hidden;
 }
 
 a {
@@ -52,17 +46,35 @@ a:hover {
 
 .brand {
     display: flex;
-    align-items: flex-end;
     justify-content: center;
-    gap: 12px;
-    margin: 14px 0 14px;
+    text-align: center;
+    flex-direction: column;
+    margin: 14px 0 16px;
+}
+
+.brand-logo img{
+    max-width: 50%;
 }
 
 .book-title {
-    font-size: 22px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 0.2px;
-    justify-self: 8st;
+    font-size: clamp(28px, 4.2vw, 40px);
+    text-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
+    margin: 0;
+    padding: 0;
+    line-height: 1.08;
+}
+
+.book-title p {
+    font-family: "Ole", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 90px;
+    margin: 20px;
+    margin-bottom: -20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 30px #000;
 }
 
 .sub {
@@ -71,11 +83,12 @@ a:hover {
 }
 
 .card {
-    background: linear-gradient(180deg, var(--card), var(--card2));
-    border: 1px solid var(--line);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
     overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
 }
 
 .card-inner {
@@ -89,30 +102,31 @@ a:hover {
 }
 
 .play {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-    border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.10);
-    color: rgba(255, 255, 255, 0.92);
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.26);
+    color: rgba(20, 26, 38, 0.92);
     display: grid;
     place-items: center;
     cursor: pointer;
     user-select: none;
-    transition: transform 0.08s ease, background 0.2s ease;
-}
-
-.play:active {
-    transform: scale(0.98);
+    transition: transform 0.10s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 14px 22px rgba(0, 0, 0, 0.18), inset 0 8px 0 rgba(255, 255, 255, 0.35);
 }
 
 .play:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.32);
+}
+
+.play:active {
+    transform: scale(0.99);
 }
 
 .play svg {
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
 }
 
 .meta {
@@ -121,34 +135,37 @@ a:hover {
 }
 
 .track {
-    font-weight: 750;
-    font-size: 16px;
-    margin: 0 0 8px 0;
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: rgba(20, 26, 38, 0.92);
 }
 
 .progress-row {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .time {
-    width: 98px;
+    width: 108px;
     text-align: right;
-    color: var(--muted);
+    color: rgba(20, 26, 38, 0.62);
     font-variant-numeric: tabular-nums;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 800;
 }
 
 .bar {
     flex: 1;
-    height: 10px;
+    height: 18px;
     border-radius: 999px;
-    border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(0, 0, 0, 0.14);
+    background: rgba(255, 255, 255, 0.72);
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 .fill {
@@ -157,7 +174,9 @@ a:hover {
     top: 0;
     bottom: 0;
     width: 0%;
-    background: rgba(255, 255, 255, 0.78);
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff2f8f, #ff7a00, #ffd93d, #5cff8a, #1fd6ff, #3e7bff, #b14bff);
+    box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.45);
 }
 
 .footer {
@@ -166,204 +185,209 @@ a:hover {
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(20, 26, 38, 0.60);
     font-size: 12px;
+    font-weight: 700;
 }
 
-.list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+body.kid {
+    background: #ffecf3;
 }
 
-.item {
-    padding: 12px 12px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.06);
+body.kid::before,
+body.kid::after {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    z-index: -5;
+    pointer-events: none;
+    will-change: transform, filter;
+    transform: translate3d(0, 0, 0);
 }
 
-.item:hover {
-    background: rgba(255, 255, 255, 0.10);
+body.kid::before {
+    filter: blur(16px);
+    opacity: 0.98;
+    background:
+        radial-gradient(circle at 16% 22%, rgba(255, 47, 143, 0.98) 0%, transparent 45%),
+        radial-gradient(circle at 86% 18%, rgba(255, 122, 0, 0.95) 0%, transparent 48%),
+        radial-gradient(circle at 60% 86%, rgba(255, 217, 61, 0.94) 0%, transparent 50%),
+        radial-gradient(circle at 14% 88%, rgba(31, 214, 255, 0.92) 0%, transparent 48%),
+        radial-gradient(circle at 90% 84%, rgba(177, 75, 255, 0.86) 0%, transparent 52%),
+        radial-gradient(circle at 48% 40%, rgba(255, 95, 210, 0.70) 0%, transparent 56%);
+    animation: kidDanceA 6.5s ease-in-out infinite;
 }
 
-@media (max-width:520px) {
-    .list {
-        grid-template-columns: 1fr;
+body.kid::after {
+    filter: blur(26px);
+    opacity: 0.72;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 95, 210, 0.88) 0%, transparent 52%),
+        radial-gradient(circle at 72% 22%, rgba(255, 120, 79, 0.86) 0%, transparent 54%),
+        radial-gradient(circle at 52% 72%, rgba(156, 255, 87, 0.74) 0%, transparent 58%),
+        radial-gradient(circle at 22% 62%, rgba(77, 214, 255, 0.78) 0%, transparent 56%),
+        radial-gradient(circle at 82% 70%, rgba(62, 123, 255, 0.62) 0%, transparent 60%);
+    animation: kidDanceB 4.8s ease-in-out infinite alternate;
+}
+
+@keyframes kidDanceA {
+    0% {
+        transform: translate3d(-2%, -1%, 0) scale(1.06) rotate(-1deg);
+    }
+
+    25% {
+        transform: translate3d(3%, -4%, 0) scale(1.12) rotate(1deg);
+    }
+
+    50% {
+        transform: translate3d(-4%, 3%, 0) scale(1.10) rotate(-0.6deg);
+    }
+
+    75% {
+        transform: translate3d(4%, 4%, 0) scale(1.14) rotate(1.2deg);
+    }
+
+    100% {
+        transform: translate3d(-2%, -1%, 0) scale(1.06) rotate(-1deg);
+    }
+}
+
+@keyframes kidDanceB {
+    0% {
+        transform: translate3d(3%, 2%, 0) scale(1.12) rotate(1deg);
+    }
+
+    50% {
+        transform: translate3d(-3%, 1%, 0) scale(1.18) rotate(-1deg);
+    }
+
+    100% {
+        transform: translate3d(2%, -3%, 0) scale(1.14) rotate(0.6deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    body.kid::before,
+    body.kid::after {
+        animation: none !important;
+    }
+}
+
+@media (max-width:600px) {
+    .wrap {
+        min-height: 100svh;
+        padding: 18px 14px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shell {
+        width: 100%;
+        max-width: 560px;
+    }
+
+    .brand {
+        margin: 10px 0 16px;
     }
 
     .book-title {
+        font-size: clamp(30px, 8.2vw, 44px);
+    }
+
+    .book-title p{
+        font-size: 70px;
+        margin-bottom: 0;
+    }
+
+    .brand-logo img{
+        max-width: 50%;
+    }
+    
+    .card-inner {
+        padding: 20px;
+    }
+
+    .player {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .play {
+        width: 112px;
+        height: 112px;
+        border-radius: 32px;
+    }
+
+    .play svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .meta {
+        width: 100%;
+        text-align: center;
+    }
+
+    .track {
         font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .progress-row {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bar {
+        width: 100%;
+        height: 36px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 2px solid rgba(0, 0, 0, 0.16);
+        box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.10), 0 12px 20px rgba(0, 0, 0, 0.14);
+        padding: 15px;
+    }
+
+    .bar::before {
+        content: "";
+        position: absolute;
+        left: -14px;
+        right: -14px;
+        top: -18px;
+        bottom: -18px;
+        border-radius: 999px;
+        background: transparent;
+    }
+
+    .fill::after {
+        content: "";
+        position: absolute;
+        right: -14px;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-50%);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.98);
+        border: 2px solid rgba(0, 0, 0, 0.16);
+        box-shadow: 0 10px 16px rgba(0, 0, 0, 0.20);
     }
 
     .time {
-        width: 90px;
+        width: auto;
+        text-align: center;
+        font-size: 14px;
     }
-}
 
-/* ===============================
-   SUPER COLORFUL KID BACKGROUND
-   =============================== */
-
-body.kid{
-  background: #ffecf3; /* light pink base */
-  color: rgba(20, 26, 38, 0.95);
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* BIG COLOR BLOBS */
-body.kid::before{
-  content:"";
-  position: fixed;
-  inset: -25%;
-  z-index: -3;
-  filter: blur(18px);
-  animation: blobMove1 16s linear infinite;
-  background:
-    radial-gradient(circle at 20% 20%, #ff3f8e 0%, transparent 45%),
-    radial-gradient(circle at 80% 15%, #ff9f1c 0%, transparent 48%),
-    radial-gradient(circle at 60% 80%, #ffd93d 0%, transparent 50%),
-    radial-gradient(circle at 15% 85%, #00d2ff 0%, transparent 48%),
-    radial-gradient(circle at 85% 75%, #7b5cff 0%, transparent 50%);
-}
-
-/* SECOND LAYER (MORE CHAOS 😄) */
-body.kid::after{
-  content:"";
-  position: fixed;
-  inset: -30%;
-  z-index: -4;
-  filter: blur(26px);
-  opacity: 0.9;
-  animation: blobMove2 22s ease-in-out infinite;
-  background:
-    radial-gradient(circle at 30% 30%, #ff5fd2 0%, transparent 50%),
-    radial-gradient(circle at 70% 20%, #ff784f 0%, transparent 55%),
-    radial-gradient(circle at 50% 70%, #9cff57 0%, transparent 55%),
-    radial-gradient(circle at 20% 70%, #4dd6ff 0%, transparent 55%),
-    radial-gradient(circle at 80% 80%, #c77dff 0%, transparent 55%);
-}
-
-/* SOFT FLOATING MOTION */
-@keyframes blobMove1{
-  0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(3%, -4%) scale(1.05); }
-  50%  { transform: translate(-4%, 3%) scale(1.08); }
-  75%  { transform: translate(4%, 4%) scale(1.03); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes blobMove2{
-  0%   { transform: translate(0, 0) scale(1); }
-  30%  { transform: translate(-5%, 4%) scale(1.08); }
-  60%  { transform: translate(4%, -3%) scale(1.12); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-/* RESPECT REDUCED MOTION */
-@media (prefers-reduced-motion: reduce){
-  body.kid::before,
-  body.kid::after{
-    animation: none;
-  }
-}
-
-body.kid .fill{
-  background: linear-gradient(
-    90deg,
-    #ff2f8f,
-    #ff784f,
-    #ffd93d,
-    #6be59a,
-    #4dd6ff,
-    #7b5cff
-  );
-}
-
-/*MOBILE MODE (phones only)*/
-
-@media (max-width: 600px) {
-
-  body.kid .wrap {
-    padding: 16px 12px;
-    align-items: flex-start;
-  }
-
-  body.kid .shell {
-    max-width: 100%;
-  }
-
-  body.kid .brand {
-    margin: 6px 0 14px;
-    align-items: flex-start;
-  }
-
-  body.kid .book-title {
-    font-size: 22px;
-    font-weight: 900;
-  }
-
-  body.kid .sub {
-    font-size: 13px;
-  }
-
-  /* PLAYER CARD */
-  body.kid .card {
-    border-radius: 28px;
-  }
-
-  body.kid .card-inner {
-    padding: 16px;
-  }
-
-  body.kid .player {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  /* Big play button for fingers */
-  body.kid .play {
-    width: 88px;
-    height: 88px;
-    border-radius: 28px;
-  }
-
-  body.kid .play svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  body.kid .meta {
-    width: 100%;
-    text-align: center;
-  }
-
-  body.kid .track {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  body.kid .progress-row {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  body.kid .bar {
-    width: 100%;
-    height: 16px;
-  }
-
-  body.kid .time {
-    width: auto;
-    font-size: 12px;
-    text-align: center;
-  }
-
-  body.kid .footer {
-    padding: 14px;
-    font-size: 12px;
-  }
+    .footer {
+        padding: 14px 16px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

@@ -17,9 +17,6 @@
 
         document.title = `${BOOK_TITLE} • ${label}`;
 
-        const elTitle = document.getElementById("trackTitle");
-        if (elTitle) elTitle.textContent = label;
-
         const audioEl = document.getElementById("audioEl");
         if (!audioEl) return;
 
