@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rəngli Piano</title>
+
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="shell">
+
+      <div class="brand">
+        <div>
+          <div class="book-title">Rəngli Piano</div>
+          <div class="sub" id="trackSub">Audio 01</div>
+        </div>
+      </div>
+
+      <!-- PLAYER -->
+      <div class="card" data-player>
+        <div class="card-inner">
+          <div class="player">
+
+            <button class="play" data-play aria-label="Play / Pause">
+              <svg data-icon="play" viewBox="0 0 24 24" fill="none">
+                <path d="M8 5.5v13l11-6.5L8 5.5z" fill="currentColor"/>
+              </svg>
+              <svg data-icon="pause" viewBox="0 0 24 24" fill="none" style="display:none;">
+                <path d="M7 6h3v12H7V6zm7 0h3v12h-3V6z" fill="currentColor"/>
+              </svg>
+            </button>
+
+            <div class="meta">
+              <p class="track" id="trackTitle">Audio 01</p>
+
+              <div class="progress-row">
+                <div class="bar" data-bar>
+                  <div class="fill" data-fill></div>
+                </div>
+                <div class="time">
+                  <span data-tcur>00:00</span> /
+                  <span data-tdur>00:00</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <audio preload="metadata" id="audioEl"></audio>
+        </div>
+
+        <div class="footer">
+          <div>Dinləmək üçün düyməyə toxunun</div>
+          <div>Rəngli Piano</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/assets/js/player.js"></script>
+  <script src="/assets/js/audio-page.js"></script>
+</body>
+</html>
