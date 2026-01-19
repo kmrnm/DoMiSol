@@ -54,6 +54,8 @@ a:hover {
 
 .brand-logo img{
     max-width: 38%;
+    border-radius: 5%;
+    box-shadow: 0px 0px 50px;
 }
 
 .book-title {
