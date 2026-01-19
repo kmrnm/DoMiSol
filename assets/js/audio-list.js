@@ -1,5 +1,5 @@
 (function () {
-  const BASE = "/rengli-piano/audio/";
+  const BASE = "/rengli-piano/tracks/";
   const EXT = "m4a";
 
   function pad2(n) {
