@@ -394,3 +394,30 @@ body.kid::after {
         flex-direction: column;
     }
 }
+
+/*List page*/
+.audio-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.audio-item{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.audio-label{
+  font-family:"Ole",cursive;
+  font-size:34px;
+  color:#fff;
+  text-shadow:2px 2px 30px #000;
+  text-align:center;
+}
+
+@media (max-width:600px){
+  .audio-list{gap:14px;}
+  .audio-label{font-size:30px;}
+  .brand-logo img{max-width:50%;}
+}
