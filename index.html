@@ -1,37 +1,49 @@
 <!doctype html>
 <html lang="az">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DoMiSol</title>
 
-  <link rel="stylesheet" href="/assets/css/app.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ole&display=swap" rel="stylesheet">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DoMiSol</title>
+
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ole&display=swap" rel="stylesheet">
+
+    <style>
+        .shell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card {
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body class="kid">
-  <div class="wrap">
-    <div class="shell">
+    <div class="wrap">
+        <div class="shell">
 
-      <div class="brand">
-        <div class="book-title">
-          <p>DoMiSol</p>
+            <div class="brand">
+                <div class="book-title">
+                    <p>DoMiSol Akademiyasının birinci nəşri "Rəngli Fortepianom"</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding:24px; text-align:center;">
+                <a href="/rengli-piano/" aria-label="Rəngli Piano kitabı">
+                    <img src="/assets/images/cover.JPG" alt="Rəngli Piano"
+                        style="max-width:100%; border-radius:18px; box-shadow:0 18px 40px rgba(0,0,0,0.35);" />
+                </a>
+            </div>
+
         </div>
-      </div>
-
-      <div class="card" style="padding:24px; text-align:center;">
-        <a href="/rengli-piano/" aria-label="Rəngli Piano kitabı">
-          <img
-            src="/assets/images/cover.JPG"
-            alt="Rəngli Piano"
-            style="max-width:70%; border-radius:18px; box-shadow:0 18px 40px rgba(0,0,0,0.35);"
-          />
-        </a>
-      </div>
-
     </div>
-  </div>
 </body>
+
 </html>
