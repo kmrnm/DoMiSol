@@ -402,7 +402,10 @@ body.kid::after {
 }
 
 .social-title {
-    font-family: "Ole", cursive;
+    font-family: "Playwrite AU TAS", cursive !important;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
     font-size: 34px;
     color: #fff;
     margin-bottom: 18px;
