@@ -406,7 +406,7 @@ body.kid::after {
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
-    font-size: 34px;
+    font-size: 24px;
     color: #fff;
     margin-bottom: 18px;
     text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.55);
@@ -448,16 +448,16 @@ body.kid::after {
 
 @media (max-width:600px) {
     .social-title {
-        font-size: 28px;
+        font-size: 1em;
     }
 
     .social-bubbles a {
-        width: 56px;
-        height: 56px;
+        width: 36px;
+        height: 36px;
     }
 
     .social-bubbles img {
-        width: 28px;
-        height: 28px;
+        width: 18px;
+        height: 18px;
     }
 }
